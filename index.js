@@ -46,10 +46,8 @@ app.get("/count", (req, res) => {
 
 app.use(express.static(path.join(__dirname, "/client/build")));
 app.get("*", (req, res) => {
-  console.log('lop')
-  res.sendFile(
-    path.join(__dirname, "/client/build", "index.html")
-  );
+  
+  res.send('hello')
 });
 
 mongoose.connect(process.env.MONGO_URL, () => {
