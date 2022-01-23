@@ -7,9 +7,7 @@ const { Note, Count } = require("./models/Note");
 const app = express();
 app.use(express.json());
 
-app.use(
-  express.static(path.join(__dirname, "/client/build"))
-);
+
 
 
 app.use(express.urlencoded({ extended: false }));
@@ -44,7 +42,11 @@ app.get("/count", (req, res) => {
     res.json(count);
   });
 });
+
+
+app.use(express.static(path.join(__dirname, "/client/build")));
 app.get("*", (req, res) => {
+  console.log('lop')
   res.sendFile(
     path.join(__dirname, "/client/build", "index.html")
   );
