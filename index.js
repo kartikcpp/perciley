@@ -4,7 +4,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const { Note, Count } = require("./models/Note");
 
-const req = require("express/lib/request");
 const app = express();
 app.use(express.json());
 
